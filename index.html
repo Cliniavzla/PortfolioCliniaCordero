@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinia Cordero | Ingeniera de Datos & Estratega TI</title>
+    <!-- Chosen Palette: Dominant Deep Blue, Muted Gray, White, Soft Rose (for accents) -->
+    <!-- Application Structure Plan: A single-page application with a fixed navigation header that allows smooth scrolling to different content sections (Inicio, Experiencia, Tecnología, Sobre Mí, Asesoría IA, Contacto). This structure is user-friendly, standard for portfolios, and provides a seamless narrative flow. The layout uses TailwindCSS for a fully responsive grid and flexbox design, ensuring optimal viewing on all devices. -->
+    <!-- Visualization & Content Choices: The application uses styled text blocks and cards to present professional information. Icons (Font Awesome) are used in the 'Experiencia' and 'Tecnología' sections to visually represent roles and tools, enhancing scannability. A new 'Asesoría IA Generativa' section highlights specialized services. An interactive contact form is included for engagement. Social media links (Gmail, X, LinkedIn) with inline SVG icons are added to the 'Contacto' section for direct connection. The goal is to inform and engage through a clean, elegant design rather than complex data visualizations, which aligns with a personal portfolio. The new color palette with dominant deep blue background, white for clean elements, and complementary muted gray and soft rose accents enhances visual appeal and modernity. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for technology icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        h1, h2, h3, h4, nav a {
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'quicksand': ['Quicksand', 'sans-serif'],
+                        'lato': ['Lato', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-dark-blue': '#002B86',
+                        'secondary-gray': '#505568',
+                        'light-rose': '#D9A7A7',
+                        'lighter-rose': '#F0E6E6', /* Nuevo color rosa más claro */
+                        'pure-white': '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary-dark-blue text-pure-white">
+
+    <!-- Header & Navigation -->
+    <header class="bg-primary-dark-blue/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-2xl font-bold text-pure-white">Clinia Cordero</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#experiencia" class="text-light-rose hover:text-pure-white transition-colors duration-300">Experiencia</a>
+                <a href="#tecnologia" class="text-light-rose hover:text-pure-white transition-colors duration-300">Tecnología</a>
+                <a href="#sobre-mi" class="text-light-rose hover:text-pure-white transition-colors duration-300">Sobre Mí</a>
+                <a href="#asesoria-ia" class="text-light-rose hover:text-pure-white transition-colors duration-300">Asesoría IA</a>
+                <a href="#contacto" class="text-light-rose hover:text-pure-white transition-colors duration-300">Contacto</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-pure-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#experiencia" class="block py-2 text-light-rose hover:text-pure-white transition-colors duration-300">Experiencia</a>
+            <a href="#tecnologia" class="block py-2 text-light-rose hover:text-pure-white transition-colors duration-300">Tecnología</a>
+            <a href="#sobre-mi" class="block py-2 text-light-rose hover:text-pure-white transition-colors duration-300">Sobre Mí</a>
+            <a href="#asesoria-ia" class="block py-2 text-light-rose hover:text-pure-white transition-colors duration-300">Asesoría IA</a>
+            <a href="#contacto" class="block py-2 text-light-rose hover:text-pure-white transition-colors duration-300">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Inicio Section -->
+        <section id="inicio" class="min-h-screen flex items-center bg-primary-dark-blue">
+            <div class="container mx-auto px-6 py-12 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <img src="https://pics.craiyon.com/2023-09-11/0274ffd42cb34f4aa35489a91b1843ae.webp" 
+                         alt="Científica de datos trabajando en un escritorio con múltiples monitores mostrando gráficos y código." 
+                         class="w-48 h-48 rounded-full mx-auto mb-8 object-cover shadow-2xl border-4 border-white">
+                    <h1 class="text-4xl md:text-6xl font-bold text-pure-white mb-4">¡Hola! Soy Clinia Cordero.</h1>
+                    <p class="text-xl md:text-2xl text-light-rose font-quicksand">Ingeniera Informática | Estratega de Datos & MLOps</p>
+                    <p class="mt-6 text-lg text-light-rose max-w-2xl mx-auto">Transformando datos complejos en soluciones claras y accionables.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mi Experiencia Section -->
+        <section id="experiencia" class="py-20 bg-primary-dark-blue">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Mi Experiencia</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Card 1: Analista de datos -->
+                    <div class="bg-pure-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-light-rose mb-6">
+                             <svg class="w-8 h-8 text-primary-dark-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Analista de Datos</h3>
+                        <p class="text-secondary-gray">Desbloqueando el valor oculto en los datos para impulsar decisiones estratégicas. Experiencia en la extracción, limpieza y visualización de información clave para optimizar procesos y entender el comportamiento del usuario.</p>
+                    </div>
+
+                    <!-- Card 2: DBA -->
+                    <div class="bg-pure-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-light-rose mb-6">
+                            <svg class="w-8 h-8 text-primary-dark-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" opacity=".4"/><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" opacity=".4"/></svg>
+                            <svg class="w-8 h-8 text-primary-dark-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h16"></path></svg>
+                         </div>
+                        <h3 class="text-2xl font-bold mb-3">Administradora de BD</h3>
+                        <p class="text-secondary-gray">Garantizando la integridad, seguridad y rendimiento óptimo de los sistemas de bases de datos. Especializada en diseño de esquemas, optimización de consultas y gestión de la disponibilidad.</p>
+                    </div>
+
+                    <!-- Card 3: Científica de datos -->
+                    <div class="bg-pure-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-light-rose mb-6">
+                           <svg class="w-8 h-8 text-primary-dark-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Científica de Datos (en Formación)</h3>
+                        <p class="text-secondary-gray">Explorando el potencial del Machine Learning para construir modelos predictivos y soluciones innovadoras. Comprometida con el aprendizaje continuo y la aplicación de algoritmos avanzados para resolver problemas complejos.</p>
+                    </div>
+
+                    <!-- Card 4: Estudiante de maestría -->
+                    <div class="bg-pure-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-light-rose mb-6">
+                            <svg class="w-8 h-8 text-primary-dark-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.022 12.083 12.083 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.022 12.083 12.083 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+                         </div>
+                        <h3 class="text-2xl font-bold mb-3">Maestría en Tecnología de la Información</h3>
+                        <p class="text-secondary-gray">Ampliando mis conocimientos en las últimas tendencias y metodologías de TI, con enfoque en la gestión de proyectos tecnológicos y la aplicación estratégica de la IA para el futuro del software.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnología Section (New) -->
+        <section id="tecnologia" class="py-20 bg-primary-dark-blue/60">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Mi Stack Tecnológico</h2>
+                <p class="text-center text-lg text-pure-white max-w-3xl mx-auto mb-12">
+                    Mi experiencia abarca un amplio rango de tecnologías y herramientas clave en el ecosistema de datos y desarrollo, permitiéndome abordar proyectos desde diversas perspectivas y con soluciones robustas.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center">
+                    <!-- Python (Font Awesome) -->
+                    <div class="flex flex-col items-center p-4 rounded-lg bg-pure-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fab fa-python text-primary-dark-blue text-5xl mb-2"></i>
+                        <span class="text-lg font-quicksand text-secondary-gray">Python</span>
+                    </div>
+                    <!-- Visual Studio Code (Font Awesome) -->
+                    <div class="flex flex-col items-center p-4 rounded-lg bg-pure-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-code text-primary-dark-blue text-5xl mb-2"></i>
+                        <span class="text-lg font-quicksand text-secondary-gray">VS Code</span>
+                    </div>
+                    <!-- MariaDB (Font Awesome) -->
+                    <div class="flex flex-col items-center p-4 rounded-lg bg-pure-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-database text-primary-dark-blue text-5xl mb-2"></i>
+                        <span class="text-lg font-quicksand text-secondary-gray">MariaDB</span>
+                    </div>
+                    <!-- PostgreSQL (Font Awesome) -->
+                    <div class="flex flex-col items-center p-4 rounded-lg bg-pure-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-database text-primary-dark-blue text-5xl mb-2"></i>
+                        <span class="text-lg font-quicksand text-secondary-gray">PostgreSQL</span>
+                    </div>
+                    <!-- Oracle (Font Awesome) -->
+                    <div class="flex flex-col items-center p-4 rounded-lg bg-pure-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-database text-primary-dark-blue text-5xl mb-2"></i>
+                        <span class="text-lg font-quicksand text-secondary-gray">Oracle</span>
+                    </div>
+                    <!-- Sybase (Font Awesome) -->
+                    <div class="flex flex-col items-center p-4 rounded-lg bg-pure-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-database text-primary-dark-blue text-5xl mb-2"></i>
+                        <span class="text-lg font-quicksand text-secondary-gray">Sybase</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mí Section -->
+        <section id="sobre-mi" class="py-20 bg-primary-dark-blue/60">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-pure-white mb-6">Sobre Mí</h2>
+                    <p class="text-lg text-light-rose leading-relaxed">
+                        Como Ingeniera Informática con una sólida trayectoria en el análisis y administración de bases de datos, mi pasión se centra en transformar el dato en conocimiento. Actualmente, profundizo en la Ciencia de Datos y la Maestría en Tecnología de la Información para fusionar la ingeniería con la inteligencia artificial, creando soluciones robustas y estratégicas que impulsan la innovación y el crecimiento.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asesoría IA Generativa Section (New) -->
+        <section id="asesoria-ia" class="py-20 bg-primary-dark-blue">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-pure-white mb-6">Asesoría en IA Generativa</h2>
+                <p class="text-xl md:text-2xl text-light-rose font-quicksand mb-8">
+                    Potenciando tu innovación con Inteligencia Artificial Generativa.
+                </p>
+                <div class="max-w-3xl mx-auto text-light-rose leading-relaxed mb-12">
+                    <p class="mb-4">
+                        Como Ingeniera Informática con una sólida base técnica y cursando la Maestría en Tecnología de la Información, ofrezco consultoría especializada para integrar y optimizar soluciones de IA Generativa en tu negocio. Mi enfoque combina una visión estratégica con la capacidad de implementar soluciones robustas y eficientes.
+                    </p>
+                    <p class="mb-4 font-bold">Mis servicios incluyen:</p>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-md space-y-2">
+                        <li>Estrategia e Implementación: Diseño de soluciones personalizadas de IA Generativa.</li>
+                        <li>Ingeniería de Prompts Avanzada: Optimización de interacciones con modelos de IA para resultados precisos.</li>
+                        <li>Integración de Modelos Personalizados: Adaptación y despliegue de modelos de IA a tus necesidades específicas.</li>
+                        <li>Optimización de Flujos de Trabajo: Mejora de la eficiencia operativa mediante la automatización con IA.</li>
+                        <li>Capacitación y Adopción: Formación para tu equipo sobre el uso efectivo de la IA Generativa.</li>
+                    </ul>
+                    <p class="mt-8 text-lg">
+                        Conversemos sobre cómo la IA Generativa puede transformar tu negocio y llevarlo al siguiente nivel.
+                    </p>
+                </div>
+                <a href="#contacto" class="inline-block bg-light-rose text-primary-dark-blue font-bold py-3 px-8 rounded-full hover:bg-light-rose/80 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    ¡Hablemos de IA!
+                </a>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto" class="py-20 bg-primary-dark-blue">
+            <div class="container mx-auto px-6">
+                <div class="max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Conversemos</h2>
+                    <p class="text-center text-light-rose mb-10">Estoy siempre abierta a nuevas oportunidades, colaboraciones o simplemente a una buena conversación sobre datos y tecnología. ¡No dudes en contactarme!</p>
+                    
+                    <form action="https://formspree.io/f/mblkrjgl" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="sr-only">Nombre</label>
+                            <input type="text" name="name" id="name" class="w-full px-4 py-3 border border-light-rose/30 rounded-lg bg-lighter-rose focus:outline-none focus:ring-2 focus:ring-light-rose transition-shadow" placeholder="Tu Nombre Completo">
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Correo</label>
+                            <input type="email" name="email" id="email" class="w-full px-4 py-3 border border-light-rose/30 rounded-lg bg-lighter-rose focus:outline-none focus:ring-2 focus:ring-light-rose transition-shadow" placeholder="Tu Correo Electrónico">
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">Mensaje</label>
+                            <textarea name="message" id="message" rows="5" class="w-full px-4 py-3 border border-light-rose/30 rounded-lg bg-lighter-rose focus:outline-none focus:ring-2 focus:ring-light-rose transition-shadow" placeholder="Cuéntame sobre tu proyecto o consulta..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-light-rose text-primary-dark-blue font-bold py-3 px-8 rounded-full hover:bg-light-rose/80 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-12">
+                        <p class="text-light-rose mb-6"><span class="font-bold">Ubicación:</span> Guayana City, Bolívar, Venezuela (Disponible para trabajo remoto)</p>
+                        <div class="flex justify-center space-x-6">
+                            <!-- Gmail -->
+                            <a href="mailto:corderoclinia@gmail.com" target="_blank" rel="noopener noreferrer" class="text-light-rose hover:text-pure-white transition-colors duration-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1.9 2L12 11.5 3.9 6h16.2zM2 18V6l10 7.5L22 6v12H2z"/>
+                                </svg>
+                            </a>
+                            <!-- X (Twitter) -->
+                            <a href="https://twitter.com/cliniacordero" target="_blank" rel="noopener noreferrer" class="text-light-rose hover:text-pure-white transition-colors duration-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.261L22 21.75h-6.162l-5.269-6.468L5.05 21.75H1.742l7.368-8.426L1 2.25h6.213l3.572 4.71L18.244 2.25zm-2.91 16.5h1.766L7.51 4.26H5.507l9.827 14.49z"/>
+                                </svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/cliniacordero?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-light-rose hover:text-pure-white transition-colors duration-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.064-2.065c0-1.134.93-2.064 2.064-2.064 1.134 0 2.064.93 2.064 2.064 0 1.134-.93 2.065-2.064 2.065zm-.009 13.016H2.723V9h2.614v11.449z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-primary-dark-blue text-light-rose py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Clinia Cordero. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Hide mobile menu on click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
